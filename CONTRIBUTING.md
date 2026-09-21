@@ -1,7 +1,6 @@
 # Contributing
 
-This is the default guide for every public repository owned by
-[TimSchoenle](https://github.com/TimSchoenle). A repository that ships its own `CONTRIBUTING.md`
+This is the default guide for every repository. A repository that ships its own `CONTRIBUTING.md`
 overrides it. Read that file first: it documents the toolchain, the generated files and the checks
 specific to that project.
 

@@ -1,7 +1,6 @@
 # Security Policy
 
-This is the default policy for every public repository owned by
-[TimSchoenle](https://github.com/TimSchoenle). A repository that ships its own `SECURITY.md` overrides
+This is the default policy for every repository. A repository that ships its own `SECURITY.md` overrides
 it, and that file is authoritative for the repository.
 
 ## Supported Versions

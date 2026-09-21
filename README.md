@@ -1,6 +1,6 @@
 # .github
 
-Default community health files for all TimSchoenle repositories
+Default community health files for all repositories
 
 [![License](https://img.shields.io/github/license/TimSchoenle/.github)](LICENSE)
 
@@ -43,10 +43,10 @@ adds one custom form has to copy the others next to it.
 GitHub never inherits `README`, `LICENSE` or the repository description. Defaults are also absent
 from a repository's clones, archives and Git history.
 
-The audit script needs an authenticated `gh` and takes the owner as its only argument:
+The audit script needs an authenticated `gh`. An optional argument names a different owner:
 
 ```bash
-bash scripts/community-audit.sh TimSchoenle
+bash scripts/community-audit.sh
 ```
 
 The API's `issue_template` column stays `false` for issue forms. The health percentage counts them
