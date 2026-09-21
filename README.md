@@ -23,8 +23,8 @@ it satisfies.
 
 - Every issue starts from a form. Blank issues are disabled, and the bug form will not submit
   without a version and a reproduction.
-- Vulnerability reports are routed to private vulnerability reporting, both from `SECURITY.md` and
-  from a contact link on the new-issue page.
+- Vulnerability reports are routed to private vulnerability reporting. `SECURITY.md` says how, and
+  GitHub adds its own reporting entry to the new-issue page of every repository that has it enabled.
 - The contributing guide links the
   [prose contract](https://github.com/TimSchoenle/actions/blob/main/docs/readme/PROSE.md) instead of
   restating it, so the two cannot drift apart.
@@ -60,7 +60,7 @@ all the same.
 | [CONTRIBUTING.md](CONTRIBUTING.md)                                   | Issue first, Conventional Commits, signed commits         |
 | [SECURITY.md](SECURITY.md)                                           | Supported versions, reporting, response targets and scope |
 | [SUPPORT.md](SUPPORT.md)                                             | Where each kind of request goes                           |
-| [.github/ISSUE_TEMPLATE/](.github/ISSUE_TEMPLATE)                    | Bug, feature and question forms, and the contact links    |
+| [.github/ISSUE_TEMPLATE/](.github/ISSUE_TEMPLATE)                    | Bug, feature and question forms, and the support link     |
 | [.github/PULL_REQUEST_TEMPLATE.md](.github/PULL_REQUEST_TEMPLATE.md) | Summary, type of change, verification and checklist       |
 
 ## Contributing
