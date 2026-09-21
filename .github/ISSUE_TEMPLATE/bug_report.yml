@@ -20,7 +20,7 @@ body:
     id: version
     attributes:
       label: Version
-      description: Release tag, chart version, image tag, or commit SHA.
+      description: Release tag, chart version, image tag or commit SHA.
       placeholder: v1.4.2
     validations:
       required: true
@@ -28,7 +28,7 @@ body:
     id: component
     attributes:
       label: Affected component
-      description: Crate, chart, action, service, or module. Leave empty if the repository has only one.
+      description: Crate, chart, action, service or module. Leave empty if the repository has only one.
   - type: textarea
     id: environment
     attributes:

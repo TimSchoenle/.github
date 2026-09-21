@@ -13,11 +13,11 @@ body:
     id: tried
     attributes:
       label: What you have tried
-      description: Documentation you read, configuration you used, and what happened.
+      description: Documentation you read, configuration you used and what happened.
     validations:
       required: true
   - type: input
     id: version
     attributes:
       label: Version
-      description: Release tag, chart version, image tag, or commit SHA.
+      description: Release tag, chart version, image tag or commit SHA.
