@@ -1,0 +1,23 @@
+name: Question
+description: Ask how to use or configure a project after reading its README.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you have tried
+      description: Documentation you read, configuration you used, and what happened.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Release tag, chart version, image tag, or commit SHA.
