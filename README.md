@@ -16,8 +16,8 @@ takes precedence.
 gh repo clone TimSchoenle/.github community-health -- --depth 1 && bash community-health/scripts/community-audit.sh
 ```
 
-That prints one row per public source repository: its health percentage and which checklist items
-it satisfies.
+That prints one row per public, non-archived source repository: its health percentage and which
+checklist items it satisfies.
 
 ## Features
 
@@ -34,23 +34,25 @@ it satisfies.
 ## Usage
 
 A repository overrides a default by committing a file of the same name in its root, `.github/` or
-`docs/`. Five repositories do so for `CONTRIBUTING.md`.
+`docs/`.
 
-Issue templates override as a set. A repository with any valid form in its own
-`.github/ISSUE_TEMPLATE` uses none of the forms here and none of `config.yml`, so a repository that
-adds one custom form has to copy the others next to it.
+Issue templates override as a set. A repository with any file in its own `.github/ISSUE_TEMPLATE`,
+a lone `config.yml` included, uses none of the forms here and none of `config.yml`. A repository
+that adds one custom form has to copy the others next to it.
 
 GitHub never inherits `README`, `LICENSE` or the repository description. Defaults are also absent
 from a repository's clones, archives and Git history.
 
-The audit script needs an authenticated `gh`. An optional argument names a different owner:
+The audit script needs an authenticated `gh`. It audits `TimSchoenle` by default, and an optional
+argument names a different owner:
 
 ```bash
-bash scripts/community-audit.sh
+bash scripts/community-audit.sh <owner>
 ```
 
-The API's `issue_template` column stays `false` for issue forms. The health percentage counts them
-all the same.
+The `issue_templates` column reads `false` for a repository whose only templates are issue forms,
+because the Community Profile API reports Markdown templates alone. The health percentage counts
+the forms all the same.
 
 ## Documentation
 

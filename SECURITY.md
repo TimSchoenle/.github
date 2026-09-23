@@ -1,11 +1,12 @@
 # Security Policy
 
-This is the default policy for every repository. A repository that ships its own `SECURITY.md` overrides
-it, and that file is authoritative for the repository.
+This is the default policy for every repository. A repository that ships its own `SECURITY.md`
+overrides it, and that file is authoritative for the repository.
 
 ## Supported Versions
 
-Only the latest release of each project receives security fixes. A project without releases is
+Only the latest release of each project receives security fixes. In a repository that releases
+several packages, that is the latest release of each package. A project without releases is
 supported at the head of its default branch. Fixes are not backported.
 
 ## Reporting a Vulnerability
@@ -26,15 +27,16 @@ through GitHub and you are credited in the advisory unless you ask not to be.
 Reports are handled by a single maintainer. The targets below are goals and carry no contractual
 service level.
 
-| Stage                         | Target                           |
-| ----------------------------- | -------------------------------- |
-| Acknowledgement               | 7 days                           |
-| Initial assessment            | 14 days                          |
-| Fix for a confirmed critical  | 30 days                          |
-| Coordinated public disclosure | 90 days after report, at latest  |
+| Stage                                      | Target                           |
+| ------------------------------------------ | -------------------------------- |
+| Acknowledgement                            | 7 days                           |
+| Initial assessment                         | 14 days                          |
+| Fix for a confirmed critical vulnerability | 30 days                          |
+| Coordinated public disclosure              | At most 90 days after the report |
 
 ## Scope
 
-In scope: code, container images, Helm charts and GitHub Actions published from these repositories.
+In scope: code, container images, Helm charts and GitHub Actions published from the repositories
+this policy covers.
 Out of scope: vulnerabilities in third-party dependencies that are already publicly tracked upstream,
 and findings that require a compromised host or cluster-admin privileges to exploit.

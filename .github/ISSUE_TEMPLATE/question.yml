@@ -3,6 +3,15 @@ description: Ask how to use or configure a project after reading its README.
 title: "[Question]: "
 labels: ["question"]
 body:
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I read the project's README.
+          required: true
+        - label: I searched open and closed issues and found no answer.
+          required: true
   - type: textarea
     id: question
     attributes:
