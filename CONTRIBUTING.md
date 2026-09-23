@@ -24,7 +24,7 @@ says.
    [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) form, for example
    `fix(chart): quote the port in the service template`. Release tooling derives versions and
    changelogs from them.
-4. Sign your commits. The default branch rejects unsigned commits. See
+4. Sign your commits. Most repositories reject unsigned commits on the default branch. See
    [signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
 5. Add or update tests for the behaviour you change, and update documentation in the same pull
    request.
@@ -32,8 +32,9 @@ says.
    required check must be green before review.
 7. Fill in the pull request template. Link the issue with `Closes #<number>`.
 
-Several files are generated. Each one says so in its first few lines, and editing the output instead
-of its template or source will be reverted by CI.
+Some files are generated, a README most often. A generated file says so in its first few lines.
+Edit its template or source instead: CI regenerates the output, so a hand edit is overwritten or
+fails the drift check.
 
 ## Writing
 
@@ -47,8 +48,9 @@ with its annex for the repository's language.
 
 ## Review
 
-Every change reaches the default branch through a reviewed pull request. A pull request with no
-activity for 30 days after a review request may be closed, and can be reopened at any time.
+Every change reaches the default branch through a reviewed pull request. A pull request that has
+waited 30 days on its author after a review asked for changes may be closed. It can be reopened at
+any time.
 
 ## Licensing
 
