@@ -1,0 +1,66 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+tone_instructions: "Direct, no filler, no praise."
+
+reviews:
+  profile: assertive
+
+  auto_review:
+    # No bot opens pull requests here yet. Renovate is listed so that onboarding
+    # it later does not trigger reviews; both forms because the match is exact.
+    ignore_usernames:
+      - "renovate[bot]"
+      - "renovate"
+
+  # No path_filters: the repository contains no generated or tool-owned files.
+
+  path_instructions:
+    - path: "**"
+      instructions: |
+        Every file here is served by GitHub as the default for each repository of the account
+        that has no copy of its own. A change is a behavioural change across all of them: state
+        which repositories it affects and flag wording that only fits one project.
+    - path: "*.md"
+      instructions: |
+        Default community health files (CODE_OF_CONDUCT, CONTRIBUTING, SECURITY, SUPPORT, README).
+        - Relative links resolve against the consuming repository, not this one; require absolute
+          URLs for anything that lives here.
+        - Flag policy changes (vulnerability reporting channel, response commitments, enforcement
+          contacts, licensing of contributions) explicitly, even when phrased as wording fixes.
+        - Contradictions with the PR template, issue forms, or the prose contract that
+          CONTRIBUTING.md links.
+    - path: ".github/ISSUE_TEMPLATE/**"
+      instructions: |
+        GitHub issue forms. Check the form schema (unique `id`s, valid `type`s, `validations`),
+        that required fields stay project-agnostic, and that config.yml keeps blank issues
+        disabled and its contact links valid. A repository with any own ISSUE_TEMPLATE file loses
+        all of these, including config.yml.
+    - path: ".github/PULL_REQUEST_TEMPLATE.md"
+      instructions: |
+        Default PR template for every repository. Keep it project-agnostic and consistent with the
+        Conventional Commits title rule and the checklist in CONTRIBUTING.md.
+    - path: "**/*.sh"
+      instructions: |
+        Require `set -euo pipefail`, quoted expansions, and no reliance on GNU-only flags
+        without a comment. Scripts here call the GitHub API across every repository: they must
+        stay read-only, handle pagination and per-repository API failures (a 404 on one
+        repository must not silently truncate or abort the whole report), and pass owner/repo
+        values as arguments, never interpolated into GraphQL query text.
+
+  pre_merge_checks:
+    title:
+      mode: error
+      requirements: |
+        Must follow Conventional Commits: `type(scope)?!?: subject`. Allowed types: feat, fix, perf,
+        revert, docs, refactor, test, style, ci, build, chore, deps. Lowercase, imperative subject,
+        no trailing period. The default PR template here requires the same form.
+
+  # No workflows exist, so actionlint and zizmor stay at their defaults; no CI duplicates any tool.
+  tools:
+    gitleaks:
+      enabled: true
+    shellcheck:
+      enabled: true
+    markdownlint:
+      enabled: true
+    yamllint:
+      enabled: true
